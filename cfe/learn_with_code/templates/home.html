@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{%load staticfiles %}
+
+{% block styles%}
+
+   <style>
+      body {
+          border-top: 7px solid #8e145c;
+        /*min-height: 5000px;*/
+        /*min-width: 5000px;*/
+        background: white  url("{% static 'img/show.jpg' %}") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: conver;
+        background-size: cover;
+
+        /*background-image: url('{% static "img/beach.jpg" %}');*/
+        /*background-image:url('https://lh4.googleusercontent.com/-FsgMNhfQLSg/AAAAAAAAAAI/AAAAAAAAaRY/3VnF3vSuWKk/photo.jpg');*/
+        /*background-repeat: repeat-x;*/
+      }
+
+    </style>
+
+{% endblock %}
+
+{% block content %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="background-color: white">
+      <div class="container">
+           <div class="col-md-6" class="pull-right">
+            <h1>Learn By Coding!</h1>
+            <p>An opportunity as a starting point to create something more unique.</p>
+            <p><a class="btn btn-default btn-lg btn-block" href="#SignUp" role="button">Be First &raquo;</a></p>
+           </div>
+            <div class="col-md-6">
+                <img src="{% static 'img/colors.jpg' %}" class="pull-right img-responsive img-rounded"/>
+
+            </div>
+      </div>
+    </div>
+
+<div class="container" style="text-align: center" id="SignUp">
+    <div class="col-md-6 col-sm-offset-3">
+        <i class="fa fa-unlock fa-5x" aria-hidden="true"></i>
+<h1>Unlock First </h1>
+<form class="form-horizontal" method="POST" action=""> {% csrf_token %}
+    <div class="form-group form-group-lg">
+        {% if form.email.errors %}
+        {% for err in form.email.errors %}
+        <div class="alert alert-danger" role="alert"> {{ err }}</div>
+        {% endfor %}
+        {% endif %}
+            <div class="input-group">
+                <span class="input-group-btn">
+                <input class="form-control" type="email" name="email" placeholder="Enter Email..">
+                <input type="submit" value="Join" class="btn btn-primary btn-lg"/>
+                </span>
+            </div>
+    </div>
+</form>
+        <p class="lead" >SignUp Here.<br /> Be the First to Get News Content</p>
+</div>
+</div>
+
+<!--<div class="row featured-row">-->
+    <!--<div class="col-md-12">-->
+                <!--<div class="col-md-3 col-sm-offset-3">-->
+                    <!--<i class="fa fa-upload fa-3x" aria-hidden="true" ></i>-->
+                    <!--<h2>Feature</h2>-->
+                    <!--<p class="lead">-->
+                        <!--Some feature text goes in Here.-->
+                    <!--</p>-->
+                <!--</div>-->
+                <!--<div class="col-md-3">-->
+                    <!--<i class="fa fa-upload fa-3x" aria-hidden="true" ></i>-->
+                    <!--<h2>Feature</h2>-->
+                    <!--<p class="lead">-->
+                        <!--Some feature text goes in Here.-->
+                    <!--</p>-->
+                <!--</div>-->
+
+    <!--</div>-->
+
+<!--</div>-->
+
+<div class="row featured-row">
+    <div class="col-md-12">
+                <div class="col-md-3">
+                    <i class="fa fa-cloud-download fa-3x" aria-hidden="true" ></i>
+                    <h2>Full Access to<br /> All Content</h2>
+                    <p class="lead">
+                        All projects, all the time.<br/>
+                        You have our entire library<br/>
+                        streaming or downloaded to<br/>
+                        your computer.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-life-ring fa-3x" aria-hidden="true" ></i>
+                    <h2>Get Support <br /> at All Time</h2>
+                    <p class="lead">
+                        Learn by doing real projects,<br/>
+                        at your own pace, on your<br/>
+                        own schedule. Be free to <br/>
+                        contact us when you have <br/>
+                        a problem.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-refresh fa-3x" aria-hidden="true" ></i>
+                    <h2>You Talk.<br/>We Listen</h2>
+                    <p class="lead">
+                        Content is updated,<br/> changed,
+                        reloaded, enfused, added based
+                        on feedback from our members
+                        We work hard to ensure you
+                        learn what you need and what you want.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-power-off  fa-3x" aria-hidden="true" ></i>
+                    <h2>Pause Anytime.</h2>
+
+                    <p class="lead">
+                         <br />
+                        Pause is a friendly <br/>way to say
+                        stop membership, but seriously,
+                        pause/stop/cancel whenever you
+                        want. We'll be here whenever
+                        you want to return..
+                    </p>
+                </div>
+
+    </div>
+
+</div>
+
+
+<div class="row featured-row">
+    <div class="col-md-12">
+        <div class="col-md-3">
+                    <i class="fa fa-github fa-3x" aria-hidden="true" ></i>
+                    <h2>Open Source<br/> Code</h2>
+                    <p class="lead">
+                        The Code is freely <br/>available
+                        for you to use at anytime.
+                        Check your work as you go,
+                        use it in your
+                        real-life business projects,
+                        it's your call.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-upload fa-3x" aria-hidden="true" ></i>
+                    <h2>Feature</h2>
+                    <p class="lead">
+                        Some feature text goes in Here.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-upload fa-3x" aria-hidden="true" ></i>
+                    <h2>Feature</h2>
+                    <p class="lead">
+                        Some feature text goes in Here.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-upload fa-3x" aria-hidden="true" ></i>
+                    <h2>Feature</h2>
+                    <p class="lead">
+                        Some feature text goes in Here.
+                    </p>
+                </div>
+    </div>
+
+</div>
+
+
+
+
+ {% endblock %}
+
